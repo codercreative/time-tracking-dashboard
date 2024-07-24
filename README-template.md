@@ -109,4 +109,4 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Acknowledgments
 
-[Seer Studio](https://www.youtube.com/watch?v=l9Qw8y3LfCY)
+[Ultimate Guide to UI Card Layouts using CSS Flexbox and Grid](https://www.youtube.com/watch?v=f_tMrbDSqcA)
