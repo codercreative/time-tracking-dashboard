@@ -21,24 +21,36 @@
 body {
   background-color: var(--very-dark-blue);
   font-family: "Rubik", sans-serif;
+  color: var(--white);
 
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white);
+  min-height: 100vh;
 }
 
 .container {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* AUTHOR CARD */
 
+.author-card {
+  width: 100%;
+  min-width: 327px;
+  margin: 0 auto;
+}
+
 .author-info {
+  min-height: 133px;
   background-color: var(--blue);
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1em;
+  border-radius: 12px;
 }
 
 .author-img {
@@ -53,6 +65,7 @@ h1 {
 }
 
 span {
+  display: block;
   font-weight: 500;
   color: var(--white);
 }
@@ -63,6 +76,7 @@ span {
   display: flex;
   justify-content: space-around;
   background-color: var(--dark-blue);
+  margin-bottom: 1.5em;
 }
 
 /* ACTIVITY CARDS */
@@ -70,13 +84,28 @@ span {
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1em;
+  gap: 1.5em;
 }
 
 /* ACTIVITY CARD BACKGROUND COLORS */
 .icon-card,
 .info-card {
   border-radius: 12px;
+  width: 100%;
+  min-width: 327px;
+}
+
+.icon-card {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.icon {
+  height: 78px;
+  width: 78px;
+  margin-right: 0.5em;
+  margin-top: -10px;
 }
 
 .info-card {
