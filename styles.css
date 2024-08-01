@@ -20,25 +20,25 @@
 
 body {
   background-color: var(--very-dark-blue);
+
   font-family: "Rubik", sans-serif;
   color: var(--white);
-
-  height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* AUTHOR CARD */
-
 .container {
-  margin-top: 10em;
+  margin-top: 2em;
 }
+
+/* AUTHOR CARD */
 
 .author-card {
   min-width: 300px;
-  position: relative;
+  background-color: var(--dark-blue);
+  border-radius: 12px;
 }
 
 .author-info {
@@ -50,8 +50,6 @@ body {
   align-items: center;
   gap: 1em;
   border-radius: 12px;
-  position: absolute;
-  z-index: 1;
 }
 
 .author-img {
@@ -81,11 +79,11 @@ span {
   justify-content: space-around;
   align-items: end;
   background-color: var(--dark-blue);
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
-  border-radius: 12px;
-  height: 160px;
-  z-index: 1;
+  border-radius: 0 12px 12px 12px;
+  min-height: 70px;
+  width: 100%;
+  padding-bottom: 1.3em;
+  margin-bottom: 1em;
 }
 
 .interval-btn {
@@ -162,8 +160,6 @@ span {
   top: 35px;
   z-index: 2;
 
-  margin-bottom: 2em;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -173,31 +169,47 @@ span {
 
 .title-div {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h2 {
   font-size: 1rem;
 }
 
+.ellipsis-icon {
+  height: 5px;
+}
+
 /* MEDIA QUERY */
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
+  body {
+    height: 100vh;
+  }
+
   .container {
     display: flex;
     flex-direction: row;
     gap: 1.3em;
+    margin-top: 0;
   }
 
   .author-card {
     flex-direction: column;
     min-width: 0;
+    position: relative;
+    background-color: var(--very-dark-blue);
   }
 
   .author-info {
     width: 200px;
+    height: 260px;
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5em 0 3em 0;
+    padding: 2em 0;
+    z-index: 2;
+    position: absolute;
   }
 
   .author-info > img,
@@ -209,26 +221,36 @@ h2 {
     margin-bottom: 1em;
   }
 
+  .card-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1.3em;
+    gap: 1em;
   }
 
   .icon-card,
   .info-card {
     width: 255px;
+    height: 150px;
   }
 
   .time-interval-buttons {
     width: 200px;
+    height: 388px;
     flex-direction: column;
-    /* align-items: flex-start; */
-    gap: 1em;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.5em;
+    z-index: 1;
+    margin-bottom: 0;
   }
 
   .interval-btn {
-    margin-left: 1em;
+    margin-left: 1.5em;
   }
 }
