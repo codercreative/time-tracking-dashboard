@@ -41,21 +41,36 @@ function updateTimeDisplay(data, selectedTimeframe) {
       const timeDisplay = activityCard.querySelector(".time-display");
 
       if (timeDisplay) {
+        // Use destructuring assignment to extract the current and previous time values for the selected timeframe
+        // Ensure that the property names (current and previous) match those in the JSON file
+        const { current, previous } = activity.timeframes[selectedTimeframe];
+
+        // Set the label for previous time based on the selected timeframe
+        let previousLabel;
+        switch (selectedTimeframe) {
+          case "daily":
+            previousLabel = "Yesterday";
+            break;
+          case "weekly":
+            previousLabel = "Last Week";
+            break;
+          case "monthly":
+            previousLabel = "Last Month";
+            break;
+          default:
+            previousLabel = "";
+            break;
+        }
+        // Update the inner HTML of the timeDisplay element with the current and previous time values
+        timeDisplay.innerHTML = `
+          <span class="current">
+            ${current}hr${current === 1 ? "" : "s"}
+          </span>
+          <span class="previous">
+            ${previousLabel} - ${previous}hr${previous === 1 ? "" : "s"}
+          </span>
+        `;
       }
-
-      // Use destructuring assignment to extract the current and previous time values for the selected timeframe
-      // Ensure that the property names (current and previous) match those in the JSON file
-      const { current, previous } = activity.timeframes[selectedTimeframe];
-
-      // Update the inner HTML of the timeDisplay element with the current and previous time values
-      timeDisplay.innerHTML = `
-      <span class="current">
-        ${current}hr${current === 1 ? "" : "s"}
-      </span>
-      <span class="previous">
-        Last Week - ${previous}hr${previous === 1 ? "" : "s"}
-        </span>
-      `;
     }
   });
 }
