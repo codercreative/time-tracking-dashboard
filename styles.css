@@ -60,9 +60,9 @@ body {
 }
 
 h1 {
-  color: var(--pale-blue);
+  color: var(--white);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 span {
@@ -73,7 +73,6 @@ span {
 }
 
 /* AUTHOR CARD TIME INTERVAL BUTTONS */
-
 .time-interval-buttons {
   display: flex;
   justify-content: space-around;
@@ -87,7 +86,7 @@ span {
 }
 
 .interval-btn {
-  color: var(--desaturated-blue);
+  color: var(--pale-blue);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -98,7 +97,6 @@ span {
 }
 
 /* ACTIVITY CARD BACKGROUNDS */
-
 .work-bg {
   background-color: var(--orange);
 }
@@ -124,7 +122,6 @@ span {
 }
 
 /* ACTIVITY CARDS */
-
 .card-wrapper {
   position: relative;
   margin-bottom: 4em;
@@ -179,6 +176,22 @@ h2 {
 
 .ellipsis-icon {
   height: 5px;
+  cursor: pointer;
+}
+
+/* JS classes for Activity Cards*/
+.time-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.current {
+  font-size: 2rem;
+}
+
+.previous {
+  font-size: 0.9rem;
+  color: var(--pale-blue);
 }
 
 /* MEDIA QUERY */
@@ -252,5 +265,9 @@ h2 {
 
   .interval-btn {
     margin-left: 1.5em;
+  }
+  /* JS classes for Activity Cards*/
+  .time-display {
+    display: block;
   }
 }

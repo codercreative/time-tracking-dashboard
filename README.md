@@ -27,12 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-![Design preview for the Time tracking dashboard coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Time tracking dashboard coding challenge](./images/screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/codercreative/time-tracking-dashboard)
+- [Live Site URL](https://time-tracking-dashboard-chris.netlify.app/)
 
 ## My process
 
@@ -93,9 +93,16 @@ Stacking the info-cards on top of the colored backgrounds:
 }
 ```
 
+I used `activity.title` from the JSON file to match and manipulate corresponding HTML elements. By converting titles to lowercase and using them as class names, I efficiently targeted and updated the specific cards in the DOM based on the selected timeframe.
+
+Also, in the `updateTimeDisplay` function, I used destructuring assignment to simplify the extraction of current and previous time values from the `activity.timeframes[selectedTimeframe]` JSON object.
+
+`activity.timeframes[selectedTimeframe]` accesses the specific timeframe data (e.g., daily, weekly, monthly) for the current activity from the JSON object.
+{ current, previous } extracts the current and previous values from this data.
+
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Next, I could refactor the code by removing the hard-coded cards from the HTML file by using template literals in JavaScript to dynamically generate and insert each card. This approach will make the code more modular and easier to maintain.
 
 ### Useful resources
 
